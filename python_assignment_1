@@ -1,0 +1,95 @@
+# ASSIGNMENT QUESTIONS
+# ===================
+
+# Question 1: Calculate the product of first 10 natural numbers
+# Your code here
+
+nat_numbers = list(range(1,11))
+product = 1
+for nat_num in nat_numbers 
+product = product * nat_num
+print(f"products of natural_numbers is {product}")
+
+
+# Question 2: Find the remainder when 156 is divided by 7
+# Your code here
+
+remainder = 156 % 7 
+print(f"the remainder is {remainder}")
+
+
+# Question 3: Calculate the square of 25
+# Your code here
+
+square_of_25 = 25**2
+print(f"square of 25 is {square_of_25}")
+
+
+# Question 4: Find the cube root of 125
+# Your code here
+
+cube_root_125 = 125**(1/3)
+print(f"cube_root of 125 is {cube_root_125}")
+
+
+# Question 5: Calculate the sum of digits in number 12345
+# Your code here
+
+number = 12345
+sum_of_digits = sum(int(digit) for digit in str(number))
+sum_of_digits
+
+# Question 6: Check if 97 is a prime number
+# Your code here
+
+num = 97
+is_prime = all (num%i!=0 for i in range (2 , int(num**0.5)+1))
+print(f"{num} is {''if is_prime else 'not'} a prime_number")
+
+
+# Question 7: Find the factorial of 8
+# Your code here
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n -1)
+
+fact = factorial(8)
+fact
+
+# Question 8: Calculate the average of numbers: 15, 23, 31, 42, 56
+# Your code here
+
+numbers = [15, 23, 31, 42, 56]
+avg_of_numbers = sum(numbers)/len(numbers)
+avg_of_numbers
+
+
+# Question 9: Find the greatest common divisor (GCD) of 48 and 36
+# Your code here
+
+def gcd(a,b):
+    while b:
+        a, b = b, a%b 
+    return a
+
+gcd_a = gcd(36,48)
+gcd_a
+
+
+# Question 10: Calculate the sum of first 20 odd numbers
+# Your code here 
+
+
+def sum_of_odd(num):
+   sum_odds = 0
+   for n in range (1, num + 1):
+      if n%2!=0:
+         sum_odds+= num
+   return sum_odds
+
+result = sum_of_odd(20)
+print("Sum of odd numbers up to 20 =", result)
+
+
