@@ -225,6 +225,464 @@ def convert_to_radians(degrees):
 result = convert_to_radians(45.7) 
 result
 
+----------------------
+strings
+----------------------
+
+# STRING DATATYPE ASSIGNMENT - 50 QUESTIONS
+# ========================================
+
+# SOLVED EXAMPLE
+# --------------
+# Question: Count vowels in the string "Hello World"
+print("SOLVED EXAMPLE:")
+print("Count vowels in the string 'Hello World'")
+text = "Hello World"
+vowels = "aeiouAEIOU"
+count = sum(1 for char in text if char in vowels)
+print(f"String: {text}")
+print(f"Number of vowels: {count}")
+print("-" * 50)
+
+# ASSIGNMENT QUESTIONS (50 QUESTIONS)
+# ==================================
+
+# Question 1: Reverse the string "Python Programming"
+# Your code here
+
+def reverse_string(string_a):
+    string_b = string_a[::-1]
+    return string_b 
+
+result = reverse_string("Python Programming")
+result
+
+
+# Question 2: Check if "racecar" is a palindrome
+# Your code here
+
+def is_palindrome(string_a):
+    string_b = string_a[::-1]
+    print(f"{string_a} is {''if (string_a == string_b) else 'not'} a palindrome")
+
+result = is_palindrome("racecar")
+result
+
+
+# Question 3: Count the number of words in "Python is a great programming language"
+# Your code here
+
+def count_words(text):
+    words = text.split()
+    return len(words)
+
+result = count_words("Python is a great programming language")
+result
+
+
+# Question 4: Convert "hello world" to title case
+# Your code here
+
+def convert_to_title(text):
+    words = text.title()
+    return words 
+
+result = convert_to_title("hello world")
+result
+
+
+# Question 5: Find the length of string "Data Science"
+# Your code here
+
+def find_length(text):
+    return len(text)
+
+result = find_length("Data Science")
+result
+
+
+
+# Question 6: Replace all spaces with underscores in "Machine Learning"
+# Your code here
+
+def under_scores(text):
+    return text.replace(" ","_")
+
+result = under_scores("Machine Learning")
+result
+
+
+# Question 7: Check if "python" is in "Python Programming Language"
+# Your code here
+
+def find_substring(text1, text2):
+    sub_text1 = text1.lower()
+    sub_text2 = text2.lower()
+    print(f"{text1} is {'' if sub_text1 = substring(sub_te)}")
+
+
+# Question 8: Extract the first 5 characters from "Artificial Intelligence"
+# Your code here
+
+def find_sub_part(text):
+    part = text[0:4:1]
+    return part 
+
+result = find_sub_part("Artificial Intelligence")
+result
+
+
+# Question 9: Convert "UPPERCASE" to lowercase
+# Your code here
+
+def lower_case(text):
+    lower = text.lower()
+    return lower 
+
+result = lower_case("UPPERCASE")
+result
+
+
+# Question 10: Remove all vowels from "Computer Science"
+# Your code here
+
+def rem_vowel(text):
+    vowel = "aeiou"
+    text1 = text.lower()
+    return ''.join(char for char in text1 if char not in vowel)
+
+result = rem_vowel("Computer Science")
+result
+
+
+# Question 11: Find the most frequent character in "mississippi"
+# Your code here
+
+def freq(text):
+    freq_char = max(set(text), key = text.count)
+    return freq_char 
+
+result = freq("mississippi")
+result
+
+
+# Question 12: Check if two strings are anagrams: "listen" and "silent"
+# Your code here
+
+from collections import Counter
+def ana_grams(text1, text2):
+    print (f" {text1} and {text2} are {''if (Counter(text1) == Counter(text2)) else 'not'} anagrams")
+
+result = ana_grams("listen", "silent")
+result
+
+
+# Question 13: Capitalize first letter of each word in "python programming language"
+# Your code here
+
+def capt(text):
+    return text.title()
+
+result = capt("python programming language")
+result
+
+# Question 14: Count consonants in "Hello World"
+# Your code here
+
+def count_consonant (text):
+    vowel = "aeiou "
+    text1 = text.lower()
+    consonant_count = sum(1 for char in text1 if char not in vowel)
+    return consonant_count
+
+result = count_consonant("Hello World")
+result
+
+# Question 15: Find the longest word in "Python is a programming language"
+# Your code here
+
+def find_max(text):
+    max_value = max(text.split(), key = len)
+    return max_value 
+
+result = find_max("Python is a programming language")
+result
+
+## or else 
+
+def longest_word(text):
+    words = text.split()
+    longest = words[0] 
+    for word in words:
+        if len(word) > len(longest):
+            longest = word
+    return longest
+
+
+result = longest_word("Python is a programming language")
+result
+
+
+# Question 16: Remove all punctuation from "Hello, World! How are you?"
+# Your code here
+
+import re 
+
+def punct(text):
+    return re.sub(r'[^\w\s]','',text)
+
+result = punct("Hello, World! How are you?")
+result
+
+
+# Question 17: Check if string starts with "Python"
+# Your code here
+
+
+def start(text):
+    words = text.split()
+    print(f"the string {'' if words[0].lower() == "python" else 
+    'does not'} starts with python")
+
+result = start("python is a language")
+result
+
+
+# Question 18: Find the index of first occurrence of 'o' in "Hello World"
+# Your code here
+
+def index(text):
+    return text.find("o")
+
+result = index("Hello World")
+result
+
+# Question 19: Split string "apple,banana,orange" by comma
+# Your code here
+
+def split_words(text):
+    return text.split(",")
+
+result = split_words("apple,banana,orange")
+result
+    
+
+# Question 20: Join list ['Python', 'is', 'awesome'] with spaces
+# Your code here
+
+result = ['Python', 'is', 'awesome'] 
+text = " ".join(result)
+text
+
+
+# Question 21: Check if string contains only digits: "12345"
+# Your code here
+
+def is_digits(num):
+    return num.isdigit()
+
+result = is_digits("12345")
+result 
+
+# Question 22: Check if string contains only letters: "HelloWorld"
+# Your code here
+
+def is_alpha(num):
+    return num.isalpha()
+
+result = is_alpha("HelloWorld")
+result
+
+# Question 23: Convert "hello world" to "hElLo WoRlD" (alternating case)
+# Your code here
+
+def alter(text):
+    words = text.split()
+    result = []
+    for word in words:
+        altered_word = ''
+        for i in range(len(word)):
+            if i%2 == 0 :
+                altered_word += word[i].lower()
+            else:
+                altered_word += word[i].upper()
+        result.append(altered_word)
+    return ' '.join(result)
+
+
+
+result = alter("hello world")
+result
+
+
+# Question 24: Find all positions of 'a' in "banana"
+# Your code here
+
+def find_a(text):
+    positions = [i for i,char in enumerate(text) if char == 'a']
+    print(positions)
+
+result = find_a("banana")
+result
+
+
+
+# Question 25: Remove leading and trailing whitespace from "  Hello World  "
+# Your code here
+
+def remove_space(text):
+    return text.strip()
+
+result = remove_space("  Hello World  ")
+result
+
+
+# Question 26: Check if string ends with "ing": "programming"
+# Your code here
+
+def end_ing(text):
+    x = len(text)
+    part = text[(x-3):(x-0):1]
+    if(part == "ing"):
+        print("It ends with ing")
+    else:
+        print("does not end with ing")
+
+result = end_ing("programming")
+result
+
+
+# Question 27: Replace first occurrence of 'o' with '0' in "Hello World"
+# Your code here
+
+def rep_lace(text):
+    part = text.replace('o','0',1)
+    return part 
+
+result = rep_lace("Hello World")
+result
+
+
+
+# Question 28: Find the shortest word in "Python is a programming language"
+# Your code here
+
+def shortest_word(text):
+    part = min(text.split(), key = len)
+    return part
+
+result = shortest_word("Python is a programming language")
+result
+
+
+# Question 29: Count words that start with 'p' in "Python programming is powerful"
+# Your code here
+
+
+def words_start(text):
+    words = text.split()
+    count = 0
+    for word in words :
+        if(word[0].lower() == 'p'):
+            count+=1
+    return count
+
+result = words_start("Python programming is powerful")
+result
+
+
+# Question 30: Reverse words in "Hello World Python"
+# Your code here
+
+
+def rev_erse(text):
+    words = text.split()[::-1]
+    return ' '.join(words)
+
+
+result = rev_erse("Hello World Python")
+result
+
+
+# Question 31: Check if string is a valid email format: "user@example.com"
+print("\nQuestion 31: Check if string is a valid email format: 'user@example.com'")
+# Your code here
+
+# Question 32: Extract domain from "https://www.example.com/path"
+print("\nQuestion 32: Extract domain from 'https://www.example.com/path'")
+# Your code here
+
+# Question 33: Count lines in multi-line string
+print("\nQuestion 33: Count lines in multi-line string")
+# Your code here
+
+# Question 34: Find common characters between "hello" and "world"
+print("\nQuestion 34: Find common characters between 'hello' and 'world'")
+# Your code here
+
+# Question 35: Check if string is a valid phone number: "+1-555-123-4567"
+print("\nQuestion 35: Check if string is a valid phone number: '+1-555-123-4567'")
+# Your code here
+
+# Question 36: Extract numbers from "abc123def456ghi789"
+print("\nQuestion 36: Extract numbers from 'abc123def456ghi789'")
+# Your code here
+
+# Question 37: Convert "snake_case" to "camelCase"
+print("\nQuestion 37: Convert 'snake_case' to 'camelCase'")
+# Your code here
+
+# Question 38: Check if string is a valid palindrome ignoring case: "A man a plan a canal Panama"
+print("\nQuestion 38: Check if string is a valid palindrome ignoring case: 'A man a plan a canal Panama'")
+# Your code here
+
+# Question 39: Find the most common word in "the quick brown fox jumps over the lazy dog"
+print("\nQuestion 39: Find the most common word in 'the quick brown fox jumps over the lazy dog'")
+# Your code here
+
+# Question 40: Generate acronym from "National Aeronautics and Space Administration"
+print("\nQuestion 40: Generate acronym from 'National Aeronautics and Space Administration'")
+# Your code here
+
+# Question 41: Check if string contains balanced parentheses: "((()))"
+print("\nQuestion 41: Check if string contains balanced parentheses: '((()))'")
+# Your code here
+
+# Question 42: Convert "hello world" to Morse code
+print("\nQuestion 42: Convert 'hello world' to Morse code")
+# Your code here
+
+# Question 43: Find the longest common substring between "programming" and "grammar"
+print("\nQuestion 43: Find the longest common substring between 'programming' and 'grammar'")
+# Your code here
+
+# Question 44: Check if string is a valid URL: "https://www.google.com"
+print("\nQuestion 44: Check if string is a valid URL: 'https://www.google.com'")
+# Your code here
+
+# Question 45: Extract all words with length > 5 from "Python programming is amazing and powerful"
+print("\nQuestion 45: Extract all words with length > 5 from 'Python programming is amazing and powerful'")
+# Your code here
+
+# Question 46: Convert "hello world" to Pig Latin
+print("\nQuestion 46: Convert 'hello world' to Pig Latin")
+# Your code here
+
+# Question 47: Check if string is a valid IPv4 address: "192.168.1.1"
+print("\nQuestion 47: Check if string is a valid IPv4 address: '192.168.1.1'")
+# Your code here
+
+# Question 48: Find all substrings of "abc"
+print("\nQuestion 48: Find all substrings of 'abc'")
+# Your code here
+
+# Question 49: Convert "hello world" to ROT13 encoding
+print("\nQuestion 49: Convert 'hello world' to ROT13 encoding")
+# Your code here
+
+# Question 50: Check if string is a valid credit card number: "4532015112830366"
+print("\nQuestion 50: Check if string is a valid credit card number: '4532015112830366'")
+# Your code here 
 
 
 
