@@ -244,6 +244,21 @@ print(f"String: {text}")
 print(f"Number of vowels: {count}")
 print("-" * 50)
 
+# STRING DATATYPE ASSIGNMENT - 50 QUESTIONS
+# ========================================
+
+# SOLVED EXAMPLE
+# --------------
+# Question: Count vowels in the string "Hello World"
+print("SOLVED EXAMPLE:")
+print("Count vowels in the string 'Hello World'")
+text = "Hello World"
+vowels = "aeiouAEIOU"
+count = sum(1 for char in text if char in vowels)
+print(f"String: {text}")
+print(f"Number of vowels: {count}")
+print("-" * 50)
+
 # ASSIGNMENT QUESTIONS (50 QUESTIONS)
 # ==================================
 
@@ -605,64 +620,212 @@ result
 
 
 # Question 31: Check if string is a valid email format: "user@example.com"
-print("\nQuestion 31: Check if string is a valid email format: 'user@example.com'")
 # Your code here
+
+import re 
+
+def valid_email(text):
+      is_valid_email = bool(re.match(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", text))
+      return is_valid_email
+
+result = valid_email("user@example.com")
+result
+
+
 
 # Question 32: Extract domain from "https://www.example.com/path"
-print("\nQuestion 32: Extract domain from 'https://www.example.com/path'")
 # Your code here
+
+
+import re 
+def domain_name(email):
+    parts = email.split("//")[1].split("/")
+    valid_tld = ['org', 'com', 'uk']
+    domain_pattern = r'^[a-zA-Z0-9-]+\.([a-zA-Z]{2,})$'
+     
+    domain = []
+    for part in parts: 
+        clean_part = part.replace("www.","")
+        match = re.match(domain_pattern,clean_part)
+        if match and match.group(1) in valid_tld:
+            domain.append(clean_part)
+    
+    return domain
+
+result = domain_name("https://www.example.com/path")
+result
+
+
 
 # Question 33: Count lines in multi-line string
-print("\nQuestion 33: Count lines in multi-line string")
 # Your code here
+
+def count_lines(text):
+    lines_count = len(text.splitlines())
+    return lines_count
+ 
+result = count_lines("""there are 
+                     3 lines in 
+                     this text""")
+result
+
+
 
 # Question 34: Find common characters between "hello" and "world"
-print("\nQuestion 34: Find common characters between 'hello' and 'world'")
 # Your code here
+
+def common_char(text1, text2):
+    set1 = set(text1)
+    set2 = set(text2)
+    chars = set1&set2
+
+    for char in chars:
+        print(char)
+
+reuslt = common_char("hello","world")
+result
+
 
 # Question 35: Check if string is a valid phone number: "+1-555-123-4567"
-print("\nQuestion 35: Check if string is a valid phone number: '+1-555-123-4567'")
 # Your code here
+
+import re
+
+def phone_number(num):
+    is_valid_phone = bool(re.match(r"^\+\d{1,3}-\d{3}-\d{3}-\d{4}$", num))
+    return is_valid_phone 
+
+result = phone_number("+1-555-123-4567")
+result
 
 # Question 36: Extract numbers from "abc123def456ghi789"
-print("\nQuestion 36: Extract numbers from 'abc123def456ghi789'")
 # Your code here
+
+import re 
+
+def match_num(num):
+    numbers = "".join(char for char in num if char.isdigit())
+    return numbers 
+
+result = match_num("abc123def456ghi789")    
+result
+
+    
 
 # Question 37: Convert "snake_case" to "camelCase"
-print("\nQuestion 37: Convert 'snake_case' to 'camelCase'")
 # Your code here
+
+def con_vert(text):
+    return "".join(word.capitalize() for word in text.split("_"))
+
+result = con_vert("snake_case")
+result
+
 
 # Question 38: Check if string is a valid palindrome ignoring case: "A man a plan a canal Panama"
-print("\nQuestion 38: Check if string is a valid palindrome ignoring case: 'A man a plan a canal Panama'")
 # Your code here
+
+def palin_drome(text):
+    
+    text1 = "".join(text.lower().replace(" ",""))
+    text_a = text[::-1]
+    text2 = text_a.lower().replace(" ","")
+    if(text1 == text2):
+        print("It is a palindorme")
+        print(text2)
+    else: 
+        print("It is not a palindrome")
+        print(text2)
+
+
+result = palin_drome("A man a plan a canal Panama")
+
 
 # Question 39: Find the most common word in "the quick brown fox jumps over the lazy dog"
-print("\nQuestion 39: Find the most common word in 'the quick brown fox jumps over the lazy dog'")
 # Your code here
 
+def freq_uency(text):
+    words = text.split()
+    most_common = max(set(words), key = words.count)
+    return most_common 
+
+result = freq_uency("the quick brown fox jumps over the lazy dog")
+result
+    
 # Question 40: Generate acronym from "National Aeronautics and Space Administration"
-print("\nQuestion 40: Generate acronym from 'National Aeronautics and Space Administration'")
 # Your code here
+
+def acronym(text):
+    text1 = text.replace(" ","")
+    return "".join(char for char in text1 if (char == char.upper()))
+
+result = acronym("National Aeronautics and Space Administration")
+result
+
 
 # Question 41: Check if string contains balanced parentheses: "((()))"
-print("\nQuestion 41: Check if string contains balanced parentheses: '((()))'")
 # Your code here
 
+def count_paranthesis(text):
+    count1 = 0
+    for char in text: 
+        if char == "(":
+            count1 = count1 + 1
+            print(f"count for paranthesis is {count1}")
+        elif  char == ")" :
+            count1 = count1 - 1
+            print(f"count for paranthesis is {count1}")
+        if (count1 == 0):
+            print(f"count for paranthesis is equal")
+            break 
+
+result = count_paranthesis("((()))")
+result
+
+
 # Question 42: Convert "hello world" to Morse code
-print("\nQuestion 42: Convert 'hello world' to Morse code")
 # Your code here
+
+def morse_code(text):
+    morse_dict = { 'A':'.-', 'B':'-.', 'C':'- -', 'D':'-.-', 'E':'.--', 'F':'.-.-',
+                   'G':'-..', 'H':'---', 'I':'-.-.', 'J':'.---',  'K':'._._-',
+                   'L': '.-..', 'M': '--', 'N': '-.',  'O': '---', 'P': '.--.', 
+                   'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 
+                   'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..'}
+    morse = " ".join(morse_dict.get(char.upper(), '') for char in text if char.isalpha())
+    return morse 
+
+result = morse_code("hello world")
+result    
+    
 
 # Question 43: Find the longest common substring between "programming" and "grammar"
 print("\nQuestion 43: Find the longest common substring between 'programming' and 'grammar'")
 # Your code here
 
+
 # Question 44: Check if string is a valid URL: "https://www.google.com"
-print("\nQuestion 44: Check if string is a valid URL: 'https://www.google.com'")
 # Your code here
+
+import re 
+
+def valid_url(text):
+    is_valid = bool(re.match(r"^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?$", url))
+    return is_valid 
+
+result = valid_url("https://www.google.com")
+result
 
 # Question 45: Extract all words with length > 5 from "Python programming is amazing and powerful"
 print("\nQuestion 45: Extract all words with length > 5 from 'Python programming is amazing and powerful'")
 # Your code here
+
+def extract_words (text):
+    long_words = [word for word in text.split() if len(word)>5]
+    return long_words
+
+result = extract_words("Python programming is amazing and powerful")
+result
 
 # Question 46: Convert "hello world" to Pig Latin
 print("\nQuestion 46: Convert 'hello world' to Pig Latin")
